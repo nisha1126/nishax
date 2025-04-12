@@ -1,5 +1,5 @@
 import "./database.js";
-import { Posts } from "./models.js";
+import { PostModule} from "./models.js";
 import express from "express";
 
 export const app = express();
@@ -9,7 +9,7 @@ app.use(express.json());
   app.get("/api/search", (req, res) => {
     const text = req.query.text;
   
-    Posts.find({
+    PostModule1.find({
       $or: [
         {
           title: new RegExp(text, "i"),
